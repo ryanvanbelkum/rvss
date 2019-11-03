@@ -1,0 +1,26 @@
+$orange: #BC4639;
+$tan: #F3E0DC;
+$white: #fff;
+$offwhite: #F4F4F4;
+
+.services{
+  display: flex;
+  justify-content: space-between;
+
+  .box{
+    width: 33%;
+    padding: 10px 0;
+
+    p{
+      background-color: $orange;
+      text-align: center;
+      margin: 0 auto;
+      padding: 20px;
+      color: $white;
+    }
+
+    img{
+      width: 100%;
+    }
+  }
+}

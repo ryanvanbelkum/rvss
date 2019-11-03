@@ -1,0 +1,15 @@
+$orange: #BC4639;
+
+header{
+  padding: 0 1rem;
+  border-bottom: 3px solid $orange;
+
+  .logo{
+    text-align: center;
+    font-family: 'Comfortaa', cursive;
+  }
+
+  .social{
+    align-self: center;
+  }
+}
