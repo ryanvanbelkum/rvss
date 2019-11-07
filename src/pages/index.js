@@ -34,7 +34,7 @@ const IndexPage = () => {
       },
       lightbulb: file(relativePath: { eq: "lightbulb.jpeg" }) {
         childImageSharp {
-          fluid(maxWidth: 2000, maxHeight: 500) {
+          fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -93,7 +93,24 @@ const IndexPage = () => {
         </div>
       </section>
       <section>
-        <Img fluid={imgs.lightbulb.childImageSharp.fluid} />
+        <Img className="lightbulb" fluid={imgs.lightbulb.childImageSharp.fluid} />
+      </section>
+      <section className="gofromhere">
+        <h2 className="center">Where Do I Go From Here?</h2>
+        <div className="container">
+          <div className="box">
+            <i className="fa fa-commenting-o" aria-hidden="true"></i>
+            <p className="service">Let's Chat</p>
+          </div>
+          <div className="box">
+            <i className="fa fa-laptop" aria-hidden="true"></i>
+            <p className="service">Sketch Out Your Ideas</p>
+          </div>
+          <div className="box">
+            <i className="fa fa-rocket" aria-hidden="true"></i>
+            <p className="service">Create</p>
+          </div>
+        </div>
       </section>
     </Layout>
   )

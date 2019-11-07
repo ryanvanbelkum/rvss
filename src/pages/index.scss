@@ -3,6 +3,10 @@ $tan: #F3E0DC;
 $white: #fff;
 $offwhite: #F4F4F4;
 
+.lightbulb {
+  max-height: 500px;
+}
+
 .services{
   display: flex;
   justify-content: space-between;
@@ -22,5 +26,58 @@ $offwhite: #F4F4F4;
     img{
       width: 100%;
     }
+  }
+}
+
+
+.gofromhere{
+
+  h2 {
+    text-align: center;
+  }
+
+  .container{
+    display: flex;
+    justify-content: space-between;
+
+    .box{
+      width: 33%;
+      text-align: center;
+
+      i{
+        font-size: 5em;
+        color: $orange;
+      }
+    }
+  }
+}
+
+//MOBILE
+@media only screen and (max-width: 768px) {
+  .services{
+    display: block;
+
+    .box{
+      width: 100%;
+    }
+  }
+
+  .gofromhere{
+
+    .container{
+      display: block;
+
+      .box{
+        width: 100%;
+      }
+    }
+  }
+
+  .container.row{
+    display: block;
+  }
+
+  .social{
+    text-align: center;
   }
 }
