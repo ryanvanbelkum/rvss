@@ -17,28 +17,28 @@ const IndexPage = () => {
             ...GatsbyImageSharpFluid
           }
         }
-      },
+      }
       backend: file(relativePath: { eq: "backend.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
           }
         }
-      },
+      }
       consulting: file(relativePath: { eq: "consulting.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 500) {
             ...GatsbyImageSharpFluid
           }
         }
-      },
+      }
       lightbulb: file(relativePath: { eq: "lightbulb.jpeg" }) {
         childImageSharp {
           fluid(maxWidth: 2000) {
             ...GatsbyImageSharpFluid
           }
         }
-      },      
+      }
     }
   `)
 
@@ -81,19 +81,24 @@ const IndexPage = () => {
       <section className="need">
         <div className="container narrow">
           <h2 className="center">You Know You Need An App/Website</h2>
-          <p><span className="attention">But have no clue where to start... </span>You may have already called some
-            software
-            agencies
-            only to receive an outrageous quote. Now you're back to square one. Or maybe you haven't even made that
-            first
-            phone call.
-            Don't let this discourage you. I'm here to help you navigate, not steal your money. If you're looking for a
-            solution that
-            is beyond my capabilities, I'll tell you.</p>
+          <p>
+            <span className="attention">
+              But have no clue where to start...{" "}
+            </span>
+            You may have already called some software agencies only to receive
+            an outrageous quote. Now you're back to square one. Or maybe you
+            haven't even made that first phone call. Don't let this discourage
+            you. I'm here to help you navigate, not steal your money. If you're
+            looking for a solution that is beyond my capabilities, I'll tell
+            you.
+          </p>
         </div>
       </section>
       <section>
-        <Img className="lightbulb" fluid={imgs.lightbulb.childImageSharp.fluid} />
+        <Img
+          className="lightbulb"
+          fluid={imgs.lightbulb.childImageSharp.fluid}
+        />
       </section>
       <section className="gofromhere">
         <h2 className="center">Where Do I Go From Here?</h2>

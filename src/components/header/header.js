@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
 import React from "react"
 
-import './header.scss';
+import "./header.scss"
 
 const Header = ({ siteTitle }) => (
   <header>
@@ -18,10 +18,10 @@ const Header = ({ siteTitle }) => (
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-};
+}
 
 Header.defaultProps = {
   siteTitle: ``,
-};
+}
 
 export default Header

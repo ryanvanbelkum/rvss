@@ -31,8 +31,12 @@ const Layout = ({ children }) => {
         <footer>
           <span className="logo">{"Ryan VanBelkum {Software Services}"}</span>
           <div className="contact">
-            <a href="mailto:hello@ryanvanbelkum.me"><i className="fa fa-envelope" aria-hidden="true"></i></a>
-            <a href="tel:816-344-1719"><i className="fa fa-phone" aria-hidden="true"></i></a>
+            <a href="mailto:hello@ryanvanbelkum.me">
+              <i className="fa fa-envelope" aria-hidden="true"></i>
+            </a>
+            <a href="tel:816-344-1719">
+              <i className="fa fa-phone" aria-hidden="true"></i>
+            </a>
           </div>
         </footer>
       </div>
