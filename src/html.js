@@ -19,7 +19,6 @@ export default function HTML(props) {
           href="https://fonts.googleapis.com/css?family=Barlow"
           rel="stylesheet"
         />
-        <script src="https://kit.fontawesome.com/e3487352bc.js"></script>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.css"

@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faRocket, faLaptop, faCommentDots } from '@fortawesome/free-solid-svg-icons'
 
 import Layout from "../components/layout/layout"
 import Hero from "../components/hero"
@@ -104,15 +106,15 @@ const IndexPage = () => {
         <h2 className="center">Where Do I Go From Here?</h2>
         <div className="container">
           <div className="box">
-            <i className="fa fa-commenting-o" aria-hidden="true"></i>
+            <FontAwesomeIcon icon={faCommentDots} />
             <p className="service">Let's Chat</p>
           </div>
           <div className="box">
-            <i className="fa fa-laptop" aria-hidden="true"></i>
+            <FontAwesomeIcon icon={faLaptop} />
             <p className="service">Sketch Out Your Ideas</p>
           </div>
           <div className="box">
-            <i className="fa fa-rocket" aria-hidden="true"></i>
+            <FontAwesomeIcon icon={faRocket} />
             <p className="service">Create</p>
           </div>
         </div>

@@ -9,7 +9,7 @@ const Header = ({ siteTitle }) => (
       <p className="logo">{siteTitle}</p>
       <div className="social">
         <a href="https://medium.com/@hello_62448">
-          <i className="fab fa-medium-m" aria-hidden="true"></i>
+          <img src="https://img.icons8.com/ios-filled/50/000000/medium-new.png" alt="medium" />
         </a>
       </div>
     </div>

@@ -8,6 +8,8 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 import Header from "../header/header"
 import "./layout.scss"
@@ -32,10 +34,10 @@ const Layout = ({ children }) => {
           <span className="logo">{"Ryan VanBelkum {Software Services}"}</span>
           <div className="contact">
             <a href="mailto:hello@ryanvanbelkum.me">
-              <i className="fa fa-envelope" aria-hidden="true"></i>
+              <FontAwesomeIcon icon={faEnvelope} />
             </a>
             <a href="tel:816-344-1719">
-              <i className="fa fa-phone" aria-hidden="true"></i>
+              <FontAwesomeIcon icon={faPhone} />
             </a>
           </div>
         </footer>
