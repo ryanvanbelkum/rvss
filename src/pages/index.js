@@ -1,126 +1,149 @@
-import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import Img from "gatsby-image"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRocket, faLaptop, faCommentDots } from '@fortawesome/free-solid-svg-icons'
-
-import Layout from "../components/layout/layout"
-import Hero from "../components/hero"
+import React, {useEffect, useRef} from "react"
+import Matter from 'matter-js';
+import randomcolor from 'randomcolor';
 import SEO from "../components/seo"
+import Layout from "../components/layout/layout"
+import Contact from '../components/contact/contact';
 
-import "./index.scss"
+import './index.scss';
 
-const IndexPage = () => {
-  const imgs = useStaticQuery(graphql`
-    query {
-      webDev: file(relativePath: { eq: "webdesign.jpeg" }) {
-        childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      backend: file(relativePath: { eq: "backend.jpeg" }) {
-        childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      consulting: file(relativePath: { eq: "consulting.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 500) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-      lightbulb: file(relativePath: { eq: "lightbulb.jpeg" }) {
-        childImageSharp {
-          fluid(maxWidth: 2000) {
-            ...GatsbyImageSharpFluid
-          }
-        }
+const random = (min, max) => Math.random() * (max - min) + min;
+
+const Page2 = () => {
+  let engine = useRef({});
+  const canvas = useRef(null);
+
+  const scaterBalls = function() {
+    const bodies = Matter.Composite.allBodies(engine.current.world);
+
+    for (let i = 0; i < bodies.length; i++) {
+      const body = bodies[i];
+
+      if (!body.isStatic && body.position.y >= 500) {
+        const forceMagnitude = 0.05 * body.mass;
+
+        Matter.Body.applyForce(body, body.position, {
+          x: (forceMagnitude + Matter.Common.random() * forceMagnitude) * Matter.Common.choose([1, -1]),
+          y: -forceMagnitude + Matter.Common.random() * -forceMagnitude
+        });
       }
     }
-  `)
+  };
+
+  useEffect(() => {
+    const width = window.innerWidth
+    const height = window.innerHeight;
+    let BALL_COUNT = width / 50;
+    let MAX_COUNT = 200;
+
+    engine.current = Matter.Engine.create();
+    const world = engine.current.world;
+    const render = Matter.Render.create({
+      canvas: canvas.current,
+      engine: engine.current,
+      options: {
+        width,
+        height,
+        background: 'transparent',
+        wireframes: false,
+        showAngleIndicator: false
+      }
+    });
+
+    let balls = [];
+    for(let i = 0; i < BALL_COUNT; i++){
+      balls.push(Matter.Bodies.circle(random(0, width), -random(0, 150), random(10, 50), {
+        density: 0.04,
+        friction: 0.01,
+        frictionAir: 0.00001,
+        restitution: 0.8,
+        render: {
+          fillStyle: randomcolor(),
+        }
+      }));
+    }
+    Matter.World.add(world, balls);
+
+    // bounds
+    Matter.World.add(world, [
+      Matter.Bodies.rectangle(width / 2, height, width, 20, { // floor
+        isStatic: true,
+        render: {
+          visible: false
+        }
+      }),
+      Matter.Bodies.rectangle(width, height / 2, 10, height, { isStatic: true, render: {
+          visible: false,
+        } }),
+      Matter.Bodies.rectangle(0, height / 2, 10, height, { isStatic: true, render: {
+          visible: false,
+        } }),
+    ]);
+
+    const mouse = Matter.Mouse.create(
+      canvas.current,
+      {
+        enabledEvents: {
+          mousewheel: false
+        }
+      }
+    );
+    mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
+    mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
+    Matter.World.add(world, mouse);
+
+    //Start the engine
+    Matter.Engine.run(engine.current);
+    Matter.Render.run(render);
+
+    const interval = setInterval(() => {
+      if(BALL_COUNT === MAX_COUNT){
+        clearInterval(interval);
+        return;
+      }
+
+      const newBall = Matter.Bodies.circle(random(0, width), -300, random(10, 50), {
+        density: 0.04,
+        friction: 0.01,
+        frictionAir: 0.00001,
+        restitution: 0.8,
+        render: {
+          fillStyle: randomcolor(),
+        }
+      });
+      Matter.World.add(world, newBall);
+      BALL_COUNT = Math.round(BALL_COUNT) + 1;
+    }, 500);
+
+
+    return () => {
+      render.canvas.remove();
+      clearInterval(interval);
+    }
+  }, []);
 
   return (
-    <Layout>
+    <Layout className="home">
       <SEO title="Home" />
-      <Hero />
-
-      <section id="about" className="about">
-        <div className="container narrow">
-          <h2 className="center">Software Development Is Expensive</h2>
-          <p>
-            <span className="attention">But it doesn't have to be... </span>
-            After working for a software contracting agency, I realized that
-            good software development was too expensive. Why was the agency
-            charging north of $150/hour for my time? The answer wasn't that good
-            software developers were too expensive. It was that the agency had
-            too many layers. There were account managers, solutions engineers,
-            random business people, sales, ect. ect. As the client do you need
-            all of that to bring your ideas and solutions to fruition? NO!
-            That's when I decided that I could bring the same quality work to
-            clients without all of the bloat.
-          </p>
-        </div>
-      </section>
-      <section className="services">
-        <div className="box">
-          <Img fluid={imgs.webDev.childImageSharp.fluid} />
-          <p className="service">Web/Application Development</p>
-        </div>
-        <div className="box">
-          <Img fluid={imgs.backend.childImageSharp.fluid} />
-          <p className="service">Backend Development</p>
-        </div>
-        <div className="box">
-          <Img fluid={imgs.consulting.childImageSharp.fluid} />
-          <p className="service">Consulting</p>
-        </div>
-      </section>
-      <section className="need">
-        <div className="container narrow">
-          <h2 className="center">You Know You Need An App/Website</h2>
-          <p>
-            <span className="attention">
-              But have no clue where to start...{" "}
-            </span>
-            You may have already called some software agencies only to receive
-            an outrageous quote. Now you're back to square one. Or maybe you
-            haven't even made that first phone call. Don't let this discourage
-            you. I'm here to help you navigate, not steal your money. If you're
-            looking for a solution that is beyond my capabilities, I'll tell
-            you.
-          </p>
-        </div>
+      <canvas ref={canvas} />
+      <section className="home__intro">
+        <h1>Websites should be unique.</h1>
       </section>
       <section>
-        <Img
-          className="lightbulb"
-          fluid={imgs.lightbulb.childImageSharp.fluid}
-        />
+        <h1>Just like these super balls.</h1>
       </section>
-      <section className="gofromhere">
-        <h2 className="center">Where Do I Go From Here?</h2>
-        <div className="container">
-          <div className="box">
-            <FontAwesomeIcon icon={faCommentDots} />
-            <p className="service">Let's Chat</p>
-          </div>
-          <div className="box">
-            <FontAwesomeIcon icon={faLaptop} />
-            <p className="service">Sketch Out Your Ideas</p>
-          </div>
-          <div className="box">
-            <FontAwesomeIcon icon={faRocket} />
-            <p className="service">Create</p>
-          </div>
-        </div>
+      <section>
+        <h1>So why aren't they?</h1>
+      </section>
+      <section>
+        <h1>Disrupt your market.</h1>
+        <span className="home__disrupt-click" onClick={scaterBalls} />
+      </section>
+      <section className="home__contact">
+        <Contact />
       </section>
     </Layout>
   )
 }
 
-export default IndexPage
+export default Page2

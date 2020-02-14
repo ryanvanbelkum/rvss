@@ -1,83 +1,45 @@
-$orange: #BC4639;
-$tan: #F3E0DC;
-$white: #fff;
-$offwhite: #F4F4F4;
-
-.lightbulb {
-  max-height: 500px;
+canvas {
+  position: fixed;
+  top: 0;
+  z-index: -1;
 }
 
-.services{
-  display: flex;
-  justify-content: space-between;
-
-  .box{
-    width: 33%;
-    padding: 10px 0;
-
-    p{
-      background-color: $orange;
-      text-align: center;
-      margin: 0 auto;
-      padding: 20px;
-      color: $white;
-    }
-
-    img{
-      width: 100%;
-    }
-  }
+html {
+  scroll-snap-type: y mandatory;
 }
 
+.home {
 
-.gofromhere{
-
-  h2 {
-    text-align: center;
-  }
-
-  .container{
+  section {
+    height: 100vh;
+    padding: 0 20%;
+    background-color: transparent;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    scroll-snap-align: start;
 
-    .box{
-      width: 33%;
-      text-align: center;
-
-      i, svg{
-        font-size: 5em;
-        color: $orange;
-      }
+    &.home__contact {
+      height: calc(100vh - 150px);
     }
-  }
-}
 
-//MOBILE
-@media only screen and (max-width: 768px) {
-  .services{
-    display: block;
-
-    .box{
-      width: 100%;
+    &.home__intro {
+      //height: calc(100vh - 179px);
     }
   }
 
-  .gofromhere{
+  &__disrupt-click {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+    margin: 0 20px;
+    transition: width .25s, height .25s, margin .25s;
 
-    .container{
-      display: block;
-
-      .box{
-        width: 100%;
-      }
+    &:hover {
+      width: 125px;
+      height: 125px;
+      margin: 0 10px;
+      cursor: pointer;
     }
-  }
-
-  .container.row{
-    display: block;
-  }
-
-  .social{
-    text-align: center;
   }
 }

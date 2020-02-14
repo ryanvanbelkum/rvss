@@ -3,6 +3,10 @@ $orange: #BC4639;
 header{
   padding: 0 1rem;
   border-bottom: 3px solid $orange;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #FFF;
 
   .logo{
     text-align: center;

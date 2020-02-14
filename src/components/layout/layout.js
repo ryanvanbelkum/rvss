@@ -14,7 +14,7 @@ import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import Header from "../header/header"
 import "./layout.scss"
 
-const Layout = ({ children }) => {
+const Layout = ({ children, className }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <div className={className}>
       <Header siteTitle={data.site.siteMetadata.title} />
       <div>
         <main>{children}</main>
@@ -42,7 +42,7 @@ const Layout = ({ children }) => {
           </div>
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 
