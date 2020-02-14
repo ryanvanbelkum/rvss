@@ -4,11 +4,12 @@ canvas {
   z-index: -1;
 }
 
-html {
-  scroll-snap-type: y mandatory;
-}
-
 .home {
+  .layout__child-container {
+    max-height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+  }
 
   section {
     height: 100vh;
@@ -27,19 +28,50 @@ html {
     }
   }
 
-  &__disrupt-click {
-    width: 100px;
-    height: 100px;
-    background-color: red;
-    border-radius: 50%;
-    margin: 0 20px;
-    transition: width .25s, height .25s, margin .25s;
+  &__disrupt {
+    &-click {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      border-radius: 50%;
+      margin: 0 20px;
+      transition: width .25s, height .25s, margin .25s;
 
-    &:hover {
-      width: 125px;
-      height: 125px;
-      margin: 0 10px;
-      cursor: pointer;
+      &:hover {
+        width: 125px;
+        height: 125px;
+        margin: 0 10px;
+        cursor: pointer;
+      }
+    }
+  }
+
+
+}
+
+@media only screen and (max-width: 768px) {
+  .home {
+    header {
+      padding: inherit;
+    }
+
+    &__disrupt {
+      &-click {
+        margin: inherit;
+        height: 40px;
+        width: 40px;
+        display: table;
+      }
+    }
+
+    section {
+      padding: 0 5%;
+
+      &.home__contact {
+        form {
+          margin-top: 60px;
+        }
+      }
     }
   }
 }

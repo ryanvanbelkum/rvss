@@ -28,7 +28,7 @@ const Layout = ({ children, className }) => {
   return (
     <div className={className}>
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
+      <div className="layout__child-container">
         <main>{children}</main>
         <footer>
           <span className="logo">{"Ryan VanBelkum {Software Services}"}</span>

@@ -34,7 +34,7 @@ const Page2 = () => {
     const width = window.innerWidth
     const height = window.innerHeight;
     let BALL_COUNT = width / 50;
-    let MAX_COUNT = 200;
+    let MAX_COUNT = width < 800 ? BALL_COUNT + 10 : 200;
 
     engine.current = Matter.Engine.create();
     const world = engine.current.world;
@@ -135,7 +135,7 @@ const Page2 = () => {
       <section>
         <h1>So why aren't they?</h1>
       </section>
-      <section>
+      <section className="home__disrupt">
         <h1>Disrupt your market.</h1>
         <span className="home__disrupt-click" onClick={scaterBalls} />
       </section>
