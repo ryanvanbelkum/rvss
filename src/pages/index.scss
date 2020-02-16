@@ -19,34 +19,28 @@ canvas {
     align-items: center;
     scroll-snap-align: start;
 
-    &.home__contact {
-      height: calc(100vh - 150px);
+    h1 {
+      line-height: 50px;
     }
 
-    &.home__intro {
-      //height: calc(100vh - 179px);
+    &.home__contact {
+      height: calc(100vh - 150px);
     }
   }
 
   &__disrupt {
-    &-click {
-      width: 100px;
-      height: 100px;
-      background-color: red;
-      border-radius: 50%;
-      margin: 0 20px;
-      transition: width .25s, height .25s, margin .25s;
+    h1 {
+      span {
+        color: rgb(0, 122, 255);
+        text-decoration: underline;
 
-      &:hover {
-        width: 125px;
-        height: 125px;
-        margin: 0 10px;
-        cursor: pointer;
+        &:hover {
+          color: rgb(0, 132, 255);
+          cursor: pointer;
+        }
       }
     }
   }
-
-
 }
 
 @media only screen and (max-width: 768px) {
@@ -55,23 +49,28 @@ canvas {
       padding: inherit;
     }
 
-    &__disrupt {
-      &-click {
-        margin: inherit;
-        height: 40px;
-        width: 40px;
-        display: table;
-      }
-    }
-
     section {
       padding: 0 5%;
+      animation: fadeBackground 7s forwards;
 
       &.home__contact {
-        form {
-          margin-top: 60px;
-        }
+        padding-top: 115px;
       }
     }
   }
+}
+
+@media only screen and (max-height: 400px) {
+  .home {
+    section {
+      &.home__contact {
+        height: inherit;
+      }
+    }
+  }
+}
+
+@keyframes fadeBackground {
+  from {background-color: transparent}
+  to {background-color: rgba(255, 255, 255, .5)}
 }

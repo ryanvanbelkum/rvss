@@ -136,8 +136,7 @@ const Page2 = () => {
         <h1>So why aren't they?</h1>
       </section>
       <section className="home__disrupt">
-        <h1>Disrupt your market.</h1>
-        <span className="home__disrupt-click" onClick={scaterBalls} />
+        <h1><span onClick={scaterBalls}>Disrupt</span> your market.</h1>
       </section>
       <section className="home__contact">
         <Contact />
