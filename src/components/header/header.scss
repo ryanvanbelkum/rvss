@@ -8,16 +8,46 @@ header{
   width: 100%;
   background-color: #FFF;
 
+  .links {
+    display: flex;
+    list-style-type: none;
+
+    a {
+      text-decoration: none;
+      font-size: 1.1rem;
+
+      &:hover {
+        color: #007aff;
+      }
+    }
+  }
+
   .logo{
     text-align: center;
     font-family: 'Comfortaa', cursive;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   .social{
-    align-self: center;
+    margin-left: 30px;
 
     img {
       height: 40px;
+    }
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  header {
+    .logo {
+      display: none;
+
+      &--mobile {
+        display: block;
+      }
     }
   }
 }

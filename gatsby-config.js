@@ -1,7 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Ryan VanBelkum { Software Services }`,
-    description: `RVSS is a full service software consulting and development shop. Reach out to us at hello@ryanvanbelkum.me`,
+    abvTitle: `RVSS`,
+    description: `RVSS is a full service web design and app development shop. Reach out to us at hello@ryanvanbelkum.me.`,
     author: `@ryanvanbelkum`,
   },
   plugins: [

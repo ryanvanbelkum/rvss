@@ -1,10 +1,3 @@
-/**
- * Layout component that queries for data
- * with Gatsby's useStaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
@@ -19,19 +12,21 @@ const Layout = ({ children, className }) => {
     query SiteTitleQuery {
       site {
         siteMetadata {
-          title
+          title,
+          abvTitle
         }
       }
     }
   `)
 
+  console.log(data)
   return (
     <div className={className}>
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <Header siteTitle={data.site.siteMetadata.title} mobileTitle={data.site.siteMetadata.abvTitle} />
       <div className="layout__child-container">
         <main>{children}</main>
         <footer>
-          <span className="logo">{"Ryan VanBelkum {Software Services}"}</span>
+          <span className="logo">{data.site.siteMetadata.title}</span>
           <div className="contact">
             <a href="mailto:hello@ryanvanbelkum.me">
               <FontAwesomeIcon icon={faEnvelope} />

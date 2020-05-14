@@ -2,8 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a216cb05-d394-4277-b397-a89e5c720490" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/images/mapMarker.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/images/medium-new.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/about.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/about.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gatsby-config.js" beforeDir="false" afterPath="$PROJECT_DIR$/gatsby-config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/layout/layout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/layout/layout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/backend.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/consulting.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/lightbulb-bak.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/lightbulb.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/webdesign.jpeg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,8 +27,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProjectId" id="1Y02Uh1tmGC4DsSUjxreRTgcKFo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="autoscrollToSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editorconfig.notification" value="null" />
@@ -29,13 +52,13 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/images" />
       <recent name="$PROJECT_DIR$/src/components/layout" />
       <recent name="$PROJECT_DIR$/src/components/header" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/images" />
     </key>
   </component>
   <component name="SvnConfiguration">
@@ -53,6 +76,15 @@
       <workItem from="1573163271362" duration="1612000" />
       <workItem from="1573166880443" duration="899000" />
       <workItem from="1573238319010" duration="1783000" />
+      <workItem from="1582065210333" duration="1323000" />
+      <workItem from="1582162884994" duration="944000" />
+      <workItem from="1582213108491" duration="205000" />
+      <workItem from="1582214391513" duration="633000" />
+      <workItem from="1582235954407" duration="101000" />
+      <workItem from="1582236076305" duration="3000" />
+      <workItem from="1582333291727" duration="1544000" />
+      <workItem from="1582647176447" duration="2712000" />
+      <workItem from="1582665157325" duration="1691000" />
     </task>
     <servers />
   </component>
@@ -70,9 +102,23 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
-    <state x="100" y="123" width="1480" height="827" key="DiffContextDialog" timestamp="1581819233165">
+    <state x="1885" y="-229" width="3031" height="1142" key="DiffContextDialog" timestamp="1582655889780">
+      <screen x="1680" y="-367" width="3440" height="1417" />
+    </state>
+    <state x="1885" y="-229" width="3031" height="1142" key="DiffContextDialog/0.23.1680.1027/1680.-367.3440.1417/5120.85.1920.1057@1680.-367.3440.1417" timestamp="1582655889780" />
+    <state x="100" y="123" width="1480" height="827" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581819233165" />
+    <state x="990" y="349" width="690" height="518" key="find.popup" timestamp="1582755718510">
       <screen x="0" y="23" width="1680" height="1027" />
     </state>
-    <state x="100" y="123" width="1480" height="827" key="DiffContextDialog/0.23.1680.1027@0.23.1680.1027" timestamp="1581819233165" />
+    <state x="990" y="333" width="690" height="518" key="find.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1582065890246" />
+    <state x="969" y="349" width="711" height="518" key="find.popup/0.23.1680.1027/1680.-367.3440.1417/5120.85.1920.1057@0.23.1680.1027" timestamp="1582647596120" />
+    <state x="3930" y="82" width="659" height="518" key="find.popup/0.23.1680.1027/1680.-367.3440.1417/5120.85.1920.1057@1680.-367.3440.1417" timestamp="1581950246691" />
+    <state x="990" y="349" width="690" height="518" key="find.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1582755718510" />
+    <state x="505" y="251" width="670" height="662" key="search.everywhere.popup" timestamp="1582755698262">
+      <screen x="0" y="23" width="1680" height="1027" />
+    </state>
+    <state x="505" y="233" width="670" height="676" key="search.everywhere.popup/0.0.1680.1050@0.0.1680.1050" timestamp="1582065685168" />
+    <state x="505" y="251" width="670" height="662" key="search.everywhere.popup/0.23.1680.1027/1680.-367.3440.1417/5120.85.1920.1057@0.23.1680.1027" timestamp="1582649255365" />
+    <state x="505" y="251" width="670" height="662" key="search.everywhere.popup/0.23.1680.1027@0.23.1680.1027" timestamp="1582755698262" />
   </component>
 </project>
