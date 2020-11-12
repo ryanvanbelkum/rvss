@@ -1,7 +1,6 @@
 import React from "react"
 import SEO from "../components/seo"
 import Layout from "../components/layout/layout"
-import market from "../images/mapMarker.png"
 
 import mapMarker from "../images/mapMarker.png"
 

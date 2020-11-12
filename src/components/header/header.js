@@ -5,6 +5,7 @@ import React from "react"
 import medium from '../../images/medium-new.png';
 import resume from '../../images/resume-100.png';
 import linkedin from '../../images/linkedin.png';
+import Youtube from '../../images/youtube.svg';
 
 import "./header.scss"
 
@@ -28,6 +29,11 @@ const Header = ({ siteTitle, mobileTitle }) => (
         <li className="social">
           <a target="_blank" rel="noopener noreferrer" href="https://medium.com/@hello_62448">
             <img src={medium} alt="medium" />
+          </a>
+        </li>
+         <li className="social">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/playlist?list=PLqyJ6IQXd55f3VTK2owcMXJuyAMhh2jEm">
+            <img src={Youtube} alt="youtube" />
           </a>
         </li>
       </ul>
