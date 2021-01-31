@@ -42,6 +42,20 @@ header{
 
 @media only screen and (max-width: 800px) {
   header {
+
+    .row {
+      display: block;
+
+      .social {
+        margin-left: 0;
+      } 
+
+      .links {
+        padding-left: 0;
+        justify-content: space-between;
+      }
+    }
+
     .logo {
       display: none;
 
